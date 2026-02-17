@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Pixel Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'VT323', monospace;
+        background-color: #fce7cf; /* Warm sunset/soil tone */
+        color: #4a3020; /* Deep wood brown */
+        image-rendering: pixelated;
+        scroll-behavior: smooth;
+      }
+      .smooth-image {
+        image-rendering: auto !important;
+      }
+      .pixel-border {
+        border: 4px solid #4a3020;
+        box-shadow: 4px 4px 0px 0px rgba(0,0,0,0.2);
+        background: #fff8e1;
+        position: relative;
+      }
+      .pixel-border::after {
+        content: '';
+        position: absolute;
+        inset: -4px;
+        border: 4px solid #4a3020;
+        pointer-events: none;
+      }
+      .pixel-btn {
+        background: #65a30d;
+        border: 4px solid #365314;
+        color: white;
+        box-shadow: 0 4px 0 #1a2e05;
+        transition: transform 0.1s, box-shadow 0.1s;
+        text-decoration: none;
+        display: inline-block;
+      }
+      .pixel-btn:hover {
+        background: #84cc16;
+      }
+      .pixel-btn:active {
+        transform: translateY(4px);
+        box-shadow: none;
+      }
+      .farm-bg {
+        background-color: #71aa34;
+        background-image: radial-gradient(#8ec641 2px, transparent 2px);
+        background-size: 32px 32px;
+      }
+      .wood-panel {
+        background: #8b5a2b;
+        border: 4px solid #4a3020;
+        color: #fef3c7;
+      }
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 12px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #4a3020;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #8b5a2b;
+        border: 3px solid #4a3020;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="farm-bg">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
