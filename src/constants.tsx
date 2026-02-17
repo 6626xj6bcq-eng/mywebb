@@ -98,7 +98,7 @@ export const PORTFOLIO_DATA: SectionData = {
       tags: ['战斗系统', '教学系统'], 
       description: '通过战斗系统拆解，引入连招教学系统构建博弈中的相对平衡。',
       imageUrl: '/projects/naraka3.jpg',
-      link: 'https://docs.qq.com/doc/DS2N3amxxbXp2cnlQ'
+      link: 'https://docs.qq.com/sheet/DS1BqQXVOYmFjWHBT?tab=000001'
     },
   ],
   deconstructions: [
@@ -107,7 +107,7 @@ export const PORTFOLIO_DATA: SectionData = {
       tags: ['独立游戏', 'AVG'], 
       description: '雨夜、操场、夏目漱石。很多年后他才终于明白少女口中“月色真美”的意义。',
       imageUrl: '/projects/yuese.jpg',
-      link: 'https://www.bilibili.com/video/BV15z421f7w2/?spm_id_from=333.999.0.0&vd_source=5f92275f606822c53a655297120e2385'
+      link: ''
     },
   ],
 };
