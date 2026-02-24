@@ -2,15 +2,16 @@
 import React from 'react';
 import { PORTFOLIO_DATA } from '../constants';
 import { ContentCard } from '../types';
+import { ScrollReveal } from './ScrollReveal';
 
 const Card: React.FC<{ data: ContentCard }> = ({ data }) => (
   <a 
     href={data.link}
     target="_blank" 
     rel="noopener noreferrer"
-    className="bg-[#fff8e1] border-4 border-[#4a3020] flex flex-col group overflow-hidden shadow-[4px_4px_0_#4a3020] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all cursor-pointer block"
+    className="bg-[#fff8e1] border-4 border-[#4a3020] flex flex-col group overflow-hidden shadow-[4px_4px_0_#4a3020] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all cursor-pointer block h-full"
   >
-    <div className="h-48 border-b-4 border-[#4a3020] relative">
+    <div className="h-48 border-b-4 border-[#4a3020] relative shrink-0">
       <img src={data.imageUrl} alt={data.title} className="w-full h-full object-cover" />
       <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
       <div className="absolute top-2 right-2 flex gap-1">
@@ -52,13 +53,17 @@ const Card: React.FC<{ data: ContentCard }> = ({ data }) => (
 
 const Section: React.FC<{ title: string; items: ContentCard[]; icon: string }> = ({ title, items, icon }) => (
   <div className="mb-24">
-    <div className="flex items-center gap-4 mb-10">
-      <span className="text-5xl">{icon}</span>
-      <h3 className="text-4xl font-bold text-[#4a3020] uppercase tracking-wider underline decoration-[#8b5a2b] decoration-8">{title}</h3>
-    </div>
+    <ScrollReveal direction="left" duration={0.6}>
+      <div className="flex items-center gap-4 mb-10">
+        <span className="text-5xl">{icon}</span>
+        <h3 className="text-4xl font-bold text-[#4a3020] uppercase tracking-wider underline decoration-[#8b5a2b] decoration-8">{title}</h3>
+      </div>
+    </ScrollReveal>
     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
       {items.map((item, i) => (
-        <Card key={i} data={item} />
+        <ScrollReveal key={i} delay={i * 0.15} scale duration={0.5} className="h-full">
+          <Card data={item} />
+        </ScrollReveal>
       ))}
     </div>
   </div>
